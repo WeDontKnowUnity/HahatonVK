@@ -40,21 +40,21 @@ const Home = ({ id, go, fetchedUser }) => (
 				/>
 				</FormItem>
 
-				<FormItem top="Ваше ВУЗ">
+				<FormItem top="Ваше факультет">
 				<Select
-					placeholder="Выберите ВУЗ"
+					placeholder="Выберите факультет"
 					options={[
 					{
 						value: '0',
-						label: 'ДГТУ',
+						label: 'МКиМТ',
 					},
 					{
 						value: '1',
-						label: 'ЮФУ',
+						label: 'ИИВТ',
 					},
 					{
 						value: '2',
-						label: 'СПбГУ',
+						label: 'АгПр',
 					},
 					]}
 				/>
@@ -90,7 +90,7 @@ const Home = ({ id, go, fetchedUser }) => (
 						</Button>
 					</ButtonGroup>
 					<br/>
-					<Button size="l" appearance="accent" style={{alignSelf:"center"}}>
+					<Button size="l" appearance="accent" onClick={go} data-to="lk" style={{alignSelf:"center"}}>
 						Начать
 					</Button>
 
