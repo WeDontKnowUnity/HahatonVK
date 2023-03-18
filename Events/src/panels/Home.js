@@ -66,29 +66,27 @@ const Home = ({ id, go, fetchedUser }) => (
 					<br/>
 				</Div>
 				
-
+				{/* outline:"solid medium", outlineColor:"#4BB34B",  */}
 				<ButtonGroup mode="vertical" gap="m" stretched>
 					<ButtonGroup mode="horizontal" gap="m" stretched>
-						<Button size="l" appearance="overlay"  style={{outline:"solid medium", outlineColor:"#FF3347", color:"#FF3347"}} before={<Icon24StarsOutline />} stretched>
+						<Button size="l" appearance="positive"  style={{color:"#FF3347", marginLeft:"2%"}} mode="outline" before={<Icon24StarsOutline />} stretched>
 						Развлечения
 						</Button>
-						<Button size="l" appearance="overlay" style={{outline:"solid medium", outlineColor:"#4BB34B", color:"#4BB34B"}} before={< Icon24GameOutline />} stretched>
+						<Button size="l" appearance="positive" style={{color:"#4BB34B", marginRight:"2%"}} mode="outline" before={< Icon24GameOutline />} stretched>
 						Игры
 						</Button>
 					</ButtonGroup>
 					<ButtonGroup mode="horizontal" gap="m" stretched>
-						<Button size="l" appearance="overlay" style={{outline:"solid medium", outlineColor:"#E03FAB", color:"#E03FAB"}} before={< Icon28PodcastOutline />} stretched>
+						<Button size="l" appearance="positive" style={{color:"#E03FAB", marginLeft:"2%"}} mode="outline" before={< Icon28PodcastOutline />} stretched>
 						Леции
 						</Button>
-						<Button size="l" appearance="overlay" style={{outline:"solid medium", outlineColor:"#FFA000", color:"#FFA000"}} before={< Icon24MoneyCircleOutline />} stretched>
+						<Button size="l" appearance="positive" style={{color:"#FFA000", marginRight:"2%"}} mode="outline" before={< Icon24MoneyCircleOutline />} stretched>
 						Конкурсы
 						</Button>
 					</ButtonGroup>
 					<ButtonGroup mode="horizontal" gap="m" stretched>
-						<Button size="l" appearance="overlay" style={{outline:"solid medium", outlineColor:"#529EF4", color:"#529EF4"}} before={< Icon24Users3Outline />} stretched>
+						<Button size="l" appearance="positive" style={{color:"#529EF4", marginLeft:"2%", marginRight:"50.8%"}} mode="outline" before={< Icon24Users3Outline />} stretched>
 						Спорт
-						</Button>
-						<Button size="l" appearance="overlay" stretched>
 						</Button>
 					</ButtonGroup>
 					<br/>
@@ -98,7 +96,6 @@ const Home = ({ id, go, fetchedUser }) => (
 
 				</ButtonGroup>
 				<br/>
-				
 				
 		</Group>}
 	</Panel>
