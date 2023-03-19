@@ -43,7 +43,7 @@ const Recommended = ({ id, go, fetchedUser }) => (
 					<Title level="3">22 марта:</Title>
 				</Div>
 
-				<CardGrid size="l">
+				<CardGrid size="l"  onClick={go} data-to="progr">
 				<Card mode="shadow">
 				</Card>
 					<ContentCard

@@ -45,7 +45,7 @@ const Recent = ({ id, go, fetchedUser }) => (
 					<Title level="3">Завтра</Title>
 				</Div>
 
-				<CardGrid size="l">
+				<CardGrid size="l" onClick={go} data-to="basketball">
 				<Card mode="shadow">
 				</Card>
 					<ContentCard
@@ -57,7 +57,7 @@ const Recent = ({ id, go, fetchedUser }) => (
 						/>
 				</CardGrid>
 
-				<CardGrid size="l">
+				<CardGrid size="l" onClick={go} data-to="hakaton">
 				<Card mode="shadow">
 				</Card>
 					<ContentCard

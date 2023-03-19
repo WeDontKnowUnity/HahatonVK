@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.1140573d.css",
-    "main.js": "/static/js/main.83199d22.js",
+    "main.css": "/static/css/main.87f0ea72.css",
+    "main.js": "/static/js/main.d1f6bfb5.js",
+    "static/media/b.png": "/static/media/b.3757a6b4917def4b56a5.png",
+    "static/media/d.webp": "/static/media/d.8056debb58e6b0b9a670.webp",
+    "static/media/a.jpg": "/static/media/a.17b0d5a4dd572e3f1fa8.jpg",
+    "static/media/basket.jpg": "/static/media/basket.76bc930c5ac3b89b3797.jpg",
+    "static/media/progr.jpg": "/static/media/progr.f7d3f905ba6c4aba0e62.jpg",
+    "static/media/Hackaton.jpg": "/static/media/Hackaton.e0016a34d36264124d11.jpg",
     "index.html": "/index.html",
-    "main.1140573d.css.map": "/static/css/main.1140573d.css.map",
-    "main.83199d22.js.map": "/static/js/main.83199d22.js.map"
+    "main.87f0ea72.css.map": "/static/css/main.87f0ea72.css.map",
+    "main.d1f6bfb5.js.map": "/static/js/main.d1f6bfb5.js.map"
   },
   "entrypoints": [
-    "static/css/main.1140573d.css",
-    "static/js/main.83199d22.js"
+    "static/css/main.87f0ea72.css",
+    "static/js/main.d1f6bfb5.js"
   ]
 }
