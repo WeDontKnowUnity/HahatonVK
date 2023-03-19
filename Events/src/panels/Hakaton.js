@@ -1,10 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import bridge from '@vkontakte/vk-bridge';
+
+import { VKWebAppShare } from '@vkontakte/vk-bridge';
 
 import { Panel, PanelHeader, Avatar, Cell, Div, TabsItem, Badge, Tabs, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text, Title } from '@vkontakte/vkui';
 import { Icon20LocationOutline, Icon24ArrowLeftOutline, Icon20ShareOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
 import b from '../img/Hackaton.jpg';
 import d from '../img/d.webp';
+
+function VKShare() {
+	bridge.send('VKWebAppShare', {
+		link: 'https://vk.com/vkappsdev'
+		})
+		.then((data) => { 
+		  if (data.result) {
+			// Запись размещена
+		  }
+		})
+		.catch((error) => {
+		  // Ошибка
+		  console.log(error);
+		});
+  }
 
 const Hakaton = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
@@ -29,15 +47,16 @@ const Hakaton = ({ id, go, fetchedUser }) => (
 				<Text style={{fontSize:"12px", marginLeft:"4%"}}>Место: Гараж ДГТУ</Text>
 			</Div>
 			<br/>
-			<Icon20ShareOutline style={{marginLeft:"5%"}}/>
+			<Button onClick={VKShare} size="l" appearance="accent" style={{marginLeft:"5%"}} before={< Icon20ShareOutline />}>
+			</Button>
 			<br/>
 			<br/>
 			<br/>
 			<Div>
-				<Title level="1" style={{fontSize:"16px", marginLeft:"4%", textAlign:"center", color:"#FFA000"}}>осталось мало мест</Title>
+				<Title level="1" style={{fontSize:"16px", textAlign:"center", color:"red"}}>Мест нет</Title>
 			</Div>
 			<ButtonGroup mode="horizontal" gap="m" stretched>
-				<Button size="l" appearance="accent" style={{marginLeft:"20%", marginRight:"20%"}} stretched>
+				<Button size="l" appearance="neutrale" style={{marginLeft:"20%", marginRight:"20%"}} stretched>
 				Записаться
 				</Button>
 			</ButtonGroup>
