@@ -13,6 +13,8 @@ import LK from './panels/LK';
 import LK2 from './panels/LK2';
 import LKorg from './panels/LKorg';
 import CardProg from './panels/CardProg';
+import Recommended from './panels/Recommended';
+import Recent from './panels/Recent';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -52,6 +54,8 @@ const App = () => {
 								<LK2 id='lk2' fetchedUser={fetchedUser} go={go} />
 								<LKorg id='lkorg' fetchedUser={fetchedUser} go={go} />
 								<CardProg id='cardprog' fetchedUser={fetchedUser} go={go} />
+								<Recent id='recent' fetchedUser={fetchedUser} go={go} />
+								<Recommended id='recommended' fetchedUser={fetchedUser} go={go} />
 							</View>
 						</SplitCol>
 					</SplitLayout>

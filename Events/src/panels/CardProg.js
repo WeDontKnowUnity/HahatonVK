@@ -8,7 +8,7 @@ import d from '../img/d.webp';
 
 const CardProg = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
-		<PanelHeader before={<Icon24ArrowLeftOutline />} onClick={go} data-to="lk">Мероприятие</PanelHeader>
+		<PanelHeader before={<Icon24ArrowLeftOutline />} onClick={go} data-to="recommended">Мероприятие</PanelHeader>
 		{fetchedUser &&
 		<Group>
 				<CardGrid size="l">

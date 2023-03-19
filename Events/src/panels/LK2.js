@@ -57,7 +57,7 @@ const LK2 = ({ id, go, fetchedUser }) => (
 
 		<Epic tabbar={
                     <Tabbar mode="vertical">
-                        <TabbarItem
+                        <TabbarItem onClick={go} data-to="recommended"
                             text="Мероприятия">
 								<Icon28NewsfeedOutline />
                         </TabbarItem>

@@ -32,7 +32,7 @@ const LK = ({ id, go, fetchedUser }) => (
 				</Button>
 			</ButtonGroup>
 			<br/>
-				<CardGrid size="l" onClick={go} data-to="cardprog">
+				<CardGrid size="l">
 				<Card mode="shadow">
 				</Card>
 					<ContentCard
@@ -63,7 +63,7 @@ const LK = ({ id, go, fetchedUser }) => (
 
 		<Epic tabbar={
                     <Tabbar mode="vertical">
-                        <TabbarItem
+                        <TabbarItem onClick={go} data-to="recommended"
                             text="Мероприятия">
 								<Icon28NewsfeedOutline />
                         </TabbarItem>
