@@ -57,11 +57,11 @@ const LK2 = ({ id, go, fetchedUser }) => (
 
 		<Epic tabbar={
                     <Tabbar mode="vertical">
-                        <TabbarItem selected
+                        <TabbarItem
                             text="Мероприятия">
 								<Icon28NewsfeedOutline />
                         </TabbarItem>
-                        <TabbarItem text="Кабинет">  
+                        <TabbarItem selected text="Кабинет">  
 						<Icon28UserCircleOutline/> 
                         </TabbarItem>
                     </Tabbar>

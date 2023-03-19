@@ -27,12 +27,14 @@ const LK = ({ id, go, fetchedUser }) => (
 					Мои мероприятия
 					</TabsItem>
 				</Tabs>
-				
+				<Button size="l" onClick={go} data-to="lk2" mode="tertiary" before={< Icon24Arrow2SquarepathOutline />} style={{position:"absolute", right:"0", marginRight:"8%"}} align="right">
+				Управление
+				</Button>
 				<Button size="l" onClick={go} data-to="lk2" mode="tertiary" before={< Icon24Arrow2SquarepathOutline />} style={{position:"absolute", right:"0", marginRight:"8%"}} align="right">
 				</Button>
 			</ButtonGroup>
 			<br/>
-				<CardGrid size="l" onClick={go} data-to="cardprog">
+				<CardGrid size="l">
 				<Card mode="shadow">
 				</Card>
 					<ContentCard

@@ -26,7 +26,7 @@ const Home = ({ id, go, fetchedUser }) => (
 				<Separator></Separator>
 				<FormItem top="Кто вы?">
 				<Select
-					placeholder="Выберите"
+					placeholder="Выберите роль"
 					options={[
 					{
 						value: '0',
