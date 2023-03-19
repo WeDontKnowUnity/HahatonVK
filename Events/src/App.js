@@ -10,6 +10,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import LK from './panels/LK';
+import LK2 from './panels/LK2';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
@@ -38,6 +39,7 @@ const App = () => {
 							<View activePanel={activePanel}>
 								<Home id='home' fetchedUser={fetchedUser} go={go} />
 								<LK id='lk' fetchedUser={fetchedUser} go={go} />
+								<LK2 id='lk2' fetchedUser={fetchedUser} go={go} />
 							</View>
 						</SplitCol>
 					</SplitLayout>
