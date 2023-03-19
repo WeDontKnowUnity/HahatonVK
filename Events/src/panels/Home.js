@@ -90,7 +90,7 @@ const Home = ({ id, go, fetchedUser }) => (
 						</Button>
 					</ButtonGroup>
 					<br/>
-					<Button size="l" appearance="accent" onClick={go} data-to="lk" style={{alignSelf:"center"}}>
+					<Button size="l" appearance="accent" onClick={go} data-to="recommended" style={{alignSelf:"center"}}>
 						Начать
 					</Button>
 
