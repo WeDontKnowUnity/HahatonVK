@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Panel, Title, TabsItem, Badge, Tabs, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Div, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
+import { Panel, Title, TabsItem, Badge, PanelHeader, Tabs, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Div, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
 import { Icon28SettingsOutline, Icon24Arrow2SquarepathOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
 import a from '../img/b.png';
 import d from '../img/progr.jpg'
 
 const Recommended = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
+		<PanelHeader></PanelHeader>
 		{fetchedUser && (
 			<Group>
 				<ButtonGroup mode="horizontal" gap="s" stretched>

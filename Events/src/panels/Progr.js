@@ -52,12 +52,10 @@ const Progr = ({ id, go, fetchedUser }) => (
 			<br/>
 			<br/>
 			<br/>
-			<Div>
-				<Title level="1" style={{fontSize:"16px", textAlign:"center", color:"red"}}>Мест нет</Title>
-			</Div>
+			<br/>
 			<ButtonGroup mode="horizontal" gap="m" stretched>
-				<Button size="l" appearance="neutrale" style={{marginLeft:"20%", marginRight:"20%"}} stretched>
-				Записаться
+				<Button size="l" appearance="negative" style={{marginLeft:"20%", marginRight:"20%"}} stretched>
+				Мест нет
 				</Button>
 			</ButtonGroup>
 			<br/>

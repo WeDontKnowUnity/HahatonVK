@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Panel, PanelHeader, Avatar, Cell, TabsItem, Badge, Tabs, Button, Group, Card, LocaleProvider, FormItem, Calendar, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
-import { Icon28SettingsOutline, Icon24Arrow2SquarepathOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
+import { Icon28SettingsOutline, Icon24Arrow2SquarepathOutline, Icon28UserCircleOutline, Icon24CalendarOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
 import a from '../img/a.jpg';
 import d from '../img/d.webp';
 
@@ -28,7 +28,7 @@ const LK2 = ({ id, go, fetchedUser }) => (
 					</TabsItem>
 				</Tabs>
 				
-				<Button size="l"  onClick={go} data-to="lk" mode="tertiary" before={< Icon24Arrow2SquarepathOutline />} style={{position:"absolute", right:"0", marginRight:"8%"}} align="right">
+				<Button size="l"  onClick={go} data-to="lk" mode="tertiary" before={< Icon24CalendarOutline />} style={{position:"absolute", right:"0", marginRight:"8%"}} align="right">
 				</Button>
 			</ButtonGroup>
 			<br/>
