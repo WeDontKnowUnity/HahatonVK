@@ -8,12 +8,12 @@ import d from '../img/basket.jpg'
 import h from '../img/Hackaton.jpg'
 
 
-const Recent = ({ id, go, fetchedUser }) => (
+const Recent = ({ id, go, fetchedUser, value }) => (
 	<Panel id={id}>
 		<PanelHeader></PanelHeader>
 		{fetchedUser && (
 		<Group>
-				<ButtonGroup mode="horizontal" gap="s" stretched>
+			<ButtonGroup mode="horizontal" gap="s" stretched>
 				<Tabs style={{marginLeft:"6%"}} >
 					<TabsItem onClick={go} data-to="recommended" >
 					<a>Для Вас</a>
@@ -28,7 +28,7 @@ const Recent = ({ id, go, fetchedUser }) => (
 			</ButtonGroup>
 				<Separator></Separator>
 				<Div>
-					<Title level="3">Сегодня:</Title>
+					<Title level="3">Сегодня</Title>
 				</Div>
 				<CardGrid size="l" onClick={go} data-to="cardprog">
 				<Card mode="shadow">
@@ -39,6 +39,7 @@ const Recent = ({ id, go, fetchedUser }) => (
 						header="Киновечер"
 						text="Вечер кино и попкорна"
 						caption = "19:00"
+						maxHeight={160}
 						/>
 				</CardGrid>
 
@@ -55,6 +56,7 @@ const Recent = ({ id, go, fetchedUser }) => (
 						header="Баскетбол"
 						text="Игра в баскетбол"
 						caption = "12:00"
+						maxHeight={160}
 						/>
 				</CardGrid>
 
@@ -67,6 +69,7 @@ const Recent = ({ id, go, fetchedUser }) => (
 						header="Соревнования"
 						text="Соревнование по разработке"
 						caption = "18:00"
+						maxHeight={160}
 						/>
 				</CardGrid>
 
@@ -83,7 +86,7 @@ const Recent = ({ id, go, fetchedUser }) => (
                             text="Мероприятия">
 								<Icon28NewsfeedOutline />
                         </TabbarItem>
-                        <TabbarItem onClick={go} data-to="lk" text="Кабинет">  
+                        <TabbarItem onClick={go} data-to={value} text="Кабинет">  
 						<Icon28UserCircleOutline/> 
                         </TabbarItem>
                     </Tabbar>

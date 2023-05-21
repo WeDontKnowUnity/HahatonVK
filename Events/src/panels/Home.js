@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import PropTypes, { func } from 'prop-types';
 
 import { Panel, PanelHeader, Button, Group, Div, FormItem, Select, Title, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
 import { Icon24StarsOutline, Icon24GameOutline, Icon28PodcastOutline, Icon24MoneyCircleOutline, Icon24Users3Outline } from '@vkontakte/icons';
 
-const Home = ({ id, go, fetchedUser }) => (
+const Home = ({ id, go, fetchedUser, value, handleSelect, handleSelect2}) => ( 
 	<Panel id={id}>
 		<PanelHeader>Мероприятия</PanelHeader>
 		{fetchedUser &&
@@ -25,15 +25,15 @@ const Home = ({ id, go, fetchedUser }) => (
 				<br/>
 				<Separator></Separator>
 				<FormItem top="Кто вы?">
-				<Select
-					placeholder="Выберите роль"
+				<Select onChange={handleSelect}
+					placeholder="Выберите роль" defaultValue={'lk'}
 					options={[
 					{
-						value: '0',
+						value: 'lkorg',
 						label: 'Организатор',
 					},
 					{
-						value: '1',
+						value: 'lk',
 						label: 'Студент',
 					},
 					]}
@@ -41,19 +41,19 @@ const Home = ({ id, go, fetchedUser }) => (
 				</FormItem>
 
 				<FormItem top="Ваше факультет">
-				<Select
-					placeholder="Выберите факультет"
+				<Select onChange={handleSelect2}
+					placeholder="Выберите факультет" defaultValue={'МКиМТ'}
 					options={[
 					{
-						value: '0',
+						value: 'МКиМТ',
 						label: 'МКиМТ',
 					},
 					{
-						value: '1',
+						value: 'ИИВТ',
 						label: 'ИИВТ',
 					},
 					{
-						value: '2',
+						value: 'АгПр',
 						label: 'АгПр',
 					},
 					]}
@@ -78,7 +78,7 @@ const Home = ({ id, go, fetchedUser }) => (
 					</ButtonGroup>
 					<ButtonGroup mode="horizontal" gap="m" stretched>
 						<Button size="l" appearance="positive" style={{color:"#E03FAB", marginLeft:"2%"}} mode="outline" before={< Icon28PodcastOutline />} stretched>
-						Леции
+						Лекции
 						</Button>
 						<Button size="l" appearance="positive" style={{color:"#FFA000", marginRight:"2%"}} mode="outline" before={< Icon24MoneyCircleOutline />} stretched>
 						Конкурсы

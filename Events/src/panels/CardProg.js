@@ -4,14 +4,14 @@ import bridge from '@vkontakte/vk-bridge';
 
 import { VKWebAppShare } from '@vkontakte/vk-bridge';
 
-import { Panel, PanelHeader, Avatar, Cell, Div, TabsItem, Badge, Tabs, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text, Title } from '@vkontakte/vkui';
-import { Icon20LocationOutline, Icon24ArrowLeftOutline, Icon20ShareOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
+import { Panel, PanelHeader, Avatar, Cell, Div, TabsItem, FormItem, Badge, Tabs, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text, Title } from '@vkontakte/vkui';
+import { Icon20LocationOutline, Icon24ArrowLeftOutline, Icon24PlaceOutline, Icon20ShareOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
 import b from '../img/b.png';
 import d from '../img/d.webp';
 
 function VKShare() {
 	bridge.send('VKWebAppShare', {
-		link: 'https://vk.com/vkappsdev'
+		link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 		})
 		.then((data) => { 
 		  if (data.result) {
@@ -39,26 +39,34 @@ const CardProg = ({ id, go, fetchedUser }) => (
 						subtitle="Развлечения"
 						header="Киновечер"
 						caption = "19 марта 2023, 19:00"
+						maxHeight={300}
 						/>
 				</CardGrid>
-			<Div>
-				<Text style={{fontSize:"12px", marginLeft:"4%"}} >Вечер кино и попкорна. Будем смотреть Гарри Поттера. Приносите свои вкусняшки, будем рады всем!</Text>
-			</Div>
-			<Separator></Separator>
-			<Div>
-				<Text style={{fontSize:"12px", marginLeft:"4%"}}>Место: ул. Гагарина 1</Text>
-			</Div>
+
+			<FormItem>
+				<ButtonGroup mode="vertical" gap="m" stretched>
+					<Button onClick={VKShare} size="s" appearance="accent" mode="tertiary" style={{alignSelf:"start"}} before={< Icon20ShareOutline />}>
+						Поделиться
+					</Button>
+				</ButtonGroup>
+			</FormItem>
+
+			<FormItem>
+				<Text style={{fontSize:"16px", marginLeft:"4%"}} >Вечер кино и попкорна. Будем смотреть Гарри Поттера. Приносите свои вкусняшки, будем рады всем!</Text>
+
+				<Button size="m" appearance="neutral" mode="tertiary" disabled={true} before={<Icon24PlaceOutline />}>
+					ул. Гагарина 1
+				</Button>
+			</FormItem>
 			<br/>
-			<Button onClick={VKShare} size="l" appearance="accent" style={{marginLeft:"5%"}} before={< Icon20ShareOutline />}>
-			</Button>
 			<br/>
 			<br/>
 			<br/>
 			<br/>
 			<br/>
 			<br/>
-			<ButtonGroup mode="horizontal" gap="m" stretched>
-				<Button size="l" appearance="negative" style={{marginLeft:"20%", marginRight:"20%"}} stretched>
+			<ButtonGroup mode="vertical" gap="m" stretched>
+				<Button size="l" appearance="negative" style={{alignSelf:"center"}}>
 				Мест нет
 				</Button>
 			</ButtonGroup>

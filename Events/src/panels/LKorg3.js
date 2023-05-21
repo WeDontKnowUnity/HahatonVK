@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Panel, PanelHeader, Avatar, Cell, TabsItem, Badge, Tabs, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
-import { Icon28SettingsOutline, Icon24CalendarOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
+import { Panel, PanelHeader, Avatar, Cell, TabsItem, Div, Title, Badge, Tabs, FormItem, Calendar, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
+import { Icon28SettingsOutline, Icon24CalendarOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline, Icon24Add } from '@vkontakte/icons';
 import a from '../img/a.jpg';
 import d from '../img/d.webp';
 
-const LKORG = ({ id, go, fetchedUser, value2 }) => (
+const LKORG3 = ({ id, go, fetchedUser, value2 }) => (
 	<Panel id={id}>
 		<PanelHeader>Кабинет</PanelHeader>
 		{fetchedUser &&
@@ -23,18 +23,23 @@ const LKORG = ({ id, go, fetchedUser, value2 }) => (
 			<br/>
 			<ButtonGroup mode="horizontal" gap="s" stretched>
 				<Tabs style={{marginLeft:"6%"}} >
-					<TabsItem selected >
+					<TabsItem onClick={go} data-to="lkorg" >
 					Мои мероприятия
 					</TabsItem>
 				</Tabs>
 				<Tabs style={{marginLeft:"6%"}} >
-					<TabsItem onClick={go} data-to="lkorg3">
+					<TabsItem selected>
 					Управление
 					</TabsItem>
 				</Tabs>
 			</ButtonGroup>
-			<Button size="l" onClick={go} data-to="lkorg2" mode="tertiary" before={< Icon24CalendarOutline />} style={{position:"absolute", right:"0", marginRight:"8%"}} align="right">
+			<br/>
+			<br/>
+			<ButtonGroup mode="horizontal" gap="s" stretched>
+				<Button size="l" onClick={go} data-to="createevent" appearance="positive" style={{color:"#FFFFFF", position:"relative", left:"50%", transform: "translate(-50%, 0)"}} before={< Icon24Add />}>
+					Добавить событие
 				</Button>
+			</ButtonGroup>
 			<br/>
 			<br/>
 				<CardGrid size="l">
@@ -83,7 +88,7 @@ const LKORG = ({ id, go, fetchedUser, value2 }) => (
 	</Panel>
 );
 
-LKORG.propTypes = {
+LKORG3.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
@@ -96,4 +101,4 @@ LKORG.propTypes = {
 	}),
 };
 
-export default LKORG;
+export default LKORG3;

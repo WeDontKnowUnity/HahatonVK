@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Panel, PanelHeader, Avatar, Cell, TabsItem, Badge, Tabs, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
+import { Panel, PanelHeader, Avatar, Cell, TabsItem, Badge, Tabs, FormItem, Calendar, Button, Group, Card, CardGrid, ContentCard, Tabbar, TabbarItem, Epic, Separator, ButtonGroup, Text } from '@vkontakte/vkui';
 import { Icon28SettingsOutline, Icon24CalendarOutline, Icon28UserCircleOutline, Icon28NewsfeedOutline } from '@vkontakte/icons';
 import a from '../img/a.jpg';
 import d from '../img/d.webp';
 
-const LKORG = ({ id, go, fetchedUser, value2 }) => (
+const LKORG2 = ({ id, go, fetchedUser, value2 }) => (
 	<Panel id={id}>
 		<PanelHeader>Кабинет</PanelHeader>
 		{fetchedUser &&
@@ -33,10 +33,13 @@ const LKORG = ({ id, go, fetchedUser, value2 }) => (
 					</TabsItem>
 				</Tabs>
 			</ButtonGroup>
-			<Button size="l" onClick={go} data-to="lkorg2" mode="tertiary" before={< Icon24CalendarOutline />} style={{position:"absolute", right:"0", marginRight:"8%"}} align="right">
+			<Button size="l" onClick={go} data-to="lkorg" mode="tertiary" before={< Icon24CalendarOutline />} style={{position:"absolute", right:"0", marginRight:"8%"}} align="right">
 				</Button>
 			<br/>
 			<br/>
+			<FormItem align="center"> 
+				<Calendar size='l'/>
+			</FormItem>
 				<CardGrid size="l">
 				<Card mode="shadow">
 				</Card>
@@ -83,7 +86,7 @@ const LKORG = ({ id, go, fetchedUser, value2 }) => (
 	</Panel>
 );
 
-LKORG.propTypes = {
+LKORG2.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
@@ -96,4 +99,4 @@ LKORG.propTypes = {
 	}),
 };
 
-export default LKORG;
+export default LKORG2;

@@ -6,14 +6,14 @@ import { Icon28SettingsOutline, Icon24Arrow2SquarepathOutline, Icon24CalendarOut
 import a from '../img/progr.jpg';
 import d from '../img/d.webp';
 
-const LK = ({ id, go, fetchedUser }) => (
+const LK = ({ id, go, fetchedUser, value2 }) => (
 	<Panel id={id}>
 		<PanelHeader>Кабинет</PanelHeader>
 		{fetchedUser &&
 		<Group>
 			<Cell
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				subtitle={"Студент ДГТУ, МКиМТ"}
+				subtitle={`${"Студент ДГТУ, "} ${value2}`}
 				after={< Icon28SettingsOutline />}
 			>
 				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
@@ -41,6 +41,7 @@ const LK = ({ id, go, fetchedUser }) => (
 						header="Лекция по программированию"
 						text="Лекция, направленная на изучение программирования"
 						caption = "19:00"
+						maxHeight={160}
 						/>
 				</CardGrid>
 				<br/>
@@ -53,6 +54,7 @@ const LK = ({ id, go, fetchedUser }) => (
 						header="Красочный день"
 						text="Вас ждут веселье и много ярких моментов!"
 						caption = "12:00"
+						maxHeight={160}
 						/>
 						
 				</CardGrid>

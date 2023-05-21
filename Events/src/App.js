@@ -13,12 +13,15 @@ import Home from './panels/Home';
 import LK from './panels/LK';
 import LK2 from './panels/LK2';
 import LKorg from './panels/LKorg';
+import LKorg2 from './panels/LKorg2';
+import LKorg3 from './panels/LKorg3';
 import CardProg from './panels/CardProg';
 import Progr from './panels/Progr';
 import Recommended from './panels/Recommended';
 import Recent from './panels/Recent';
 import Basketball from './panels/Basketball';
 import Hakaton from './panels/Hakaton';
+import CreateEvent from './panels/CreateEvent';
 
 bridge.send('VKWebAppShowSlidesSheet', {
 	slides: [
@@ -28,7 +31,7 @@ bridge.send('VKWebAppShowSlidesSheet', {
 		  type: 'image'
 		},
 		title: 'Добро пожаловать в DSTU Events!',
-		subtitle: 'Воспользуйтесь лучшим приложениемдля записи на университетские мероприятия и их создания!'
+		subtitle: 'Воспользуйтесь лучшим приложением для записи на университетские мероприятия и их создания!'
 	  }
 	 ]})
 	.then((data) => { 
@@ -45,6 +48,8 @@ const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [value, setValue] = useState('lk');
+	const [value2, setValue2] = useState('МКиМТ');
 
 	useEffect(() => {
 		async function fetchData() {
@@ -58,6 +63,16 @@ const App = () => {
 	const go = e => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
+
+	function handleSelect(event)
+	{
+		setValue(event.target.value);
+	}
+
+	function handleSelect2(event)
+	{
+		setValue2(event.target.value);
+	}
 
 	// const go_role = role_s => {
     //     console.log(role_s.role);
@@ -74,16 +89,19 @@ const App = () => {
 					<SplitLayout popout={popout}>
 						<SplitCol>
 							<View activePanel={activePanel}>
-								<Home id='home' fetchedUser={fetchedUser} go={go} />
-								<LK id='lk' fetchedUser={fetchedUser} go={go} />
-								<LK2 id='lk2' fetchedUser={fetchedUser} go={go} />
-								<LKorg id='lkorg' fetchedUser={fetchedUser} go={go} />
+								<Home id='home' fetchedUser={fetchedUser} go={go} value={value} handleSelect={handleSelect} handleSelect2={handleSelect2} />
+								<LK id='lk' fetchedUser={fetchedUser} go={go} value2={value2}/>
+								<LK2 id='lk2' fetchedUser={fetchedUser} go={go} value2={value2}/>
+								<LKorg id='lkorg' fetchedUser={fetchedUser} go={go} value2={value2}/>
+								<LKorg2 id='lkorg2' fetchedUser={fetchedUser} go={go} value2={value2}/>
+								<LKorg3 id='lkorg3' fetchedUser={fetchedUser} go={go} value2={value2}/>
 								<CardProg id='cardprog' fetchedUser={fetchedUser} go={go} />
 								<Basketball id='basketball' fetchedUser={fetchedUser} go={go} />
 								<Progr id='progr' fetchedUser={fetchedUser} go={go} />
 								<Hakaton id='hakaton' fetchedUser={fetchedUser} go={go} />
-								<Recent id='recent' fetchedUser={fetchedUser} go={go} />
-								<Recommended id='recommended' fetchedUser={fetchedUser} go={go} />
+								<Recent id='recent' fetchedUser={fetchedUser} go={go} value={value}/>
+								<Recommended id='recommended' fetchedUser={fetchedUser} go={go} value={value}/>
+								<CreateEvent id='createevent' fetchedUser={fetchedUser} go={go} value={value}/>
 							</View>
 						</SplitCol>
 					</SplitLayout>

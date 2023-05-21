@@ -6,7 +6,7 @@ import { Icon28SettingsOutline, Icon24Arrow2SquarepathOutline, Icon28UserCircleO
 import a from '../img/b.png';
 import d from '../img/progr.jpg'
 
-const Recommended = ({ id, go, fetchedUser }) => (
+const Recommended = ({ id, go, fetchedUser, value }) => (
 	<Panel id={id}>
 		<PanelHeader></PanelHeader>
 		{fetchedUser && (
@@ -26,7 +26,7 @@ const Recommended = ({ id, go, fetchedUser }) => (
 			</ButtonGroup>
 				<Separator></Separator>
 				<Div>
-					<Title level="3">Сегодня:</Title>
+					<Title level="3">Сегодня</Title>
 				</Div>
 				<CardGrid size="l" onClick={go} data-to="cardprog">
 				<Card mode="shadow">
@@ -37,11 +37,12 @@ const Recommended = ({ id, go, fetchedUser }) => (
 						header="Киновечер"
 						text="Вечер кино и попкорна"
 						caption = "19:00"
+						maxHeight={160}
 						/>
 				</CardGrid>
 
 				<Div>
-					<Title level="3">22 марта:</Title>
+					<Title level="3">22 марта</Title>
 				</Div>
 
 				<CardGrid size="l"  onClick={go} data-to="progr">
@@ -53,6 +54,7 @@ const Recommended = ({ id, go, fetchedUser }) => (
 						header="Лекция по программированию"
 						text="Лекция направленная на изучение программирования"
 						caption = "19:00"
+						maxHeight={160}
 						/>
 				</CardGrid>
 
@@ -68,7 +70,7 @@ const Recommended = ({ id, go, fetchedUser }) => (
                             text="Мероприятия">
 								<Icon28NewsfeedOutline />
                         </TabbarItem>
-                        <TabbarItem  onClick={go} data-to="lk"  text="Кабинет">  
+                        <TabbarItem  onClick={go} data-to={value} text="Кабинет">  
 						<Icon28UserCircleOutline/> 
                         </TabbarItem>
                     </Tabbar>
